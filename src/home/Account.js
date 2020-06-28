@@ -1,20 +1,28 @@
 import React, { Component } from 'react'
 import { Text, View,Button } from 'react-native'
-
+import { CommonActions } from '@react-navigation/native'
 export class Account extends Component {
     constructor(props){
         super(props)
     }
-    gotoHome=()=>{
-        this.props.navigation.navigate('Login')
+    /**
+     * 退出登陆
+     */
+    loginOut=()=>{
+        this.props.navigation.dispatch(state => {
+            return CommonActions.reset({
+              routes:[
+                { name: 'Login' }
+              ],
+              index: 0,
+            });
+          });
     }
     render() {
         return (
             <View>
                 <Text> Account </Text>
-                <Button onPress={()=>{
-                    this.props.navigation.navigate('Login')
-                }}  title="Go to gotoHome">
+                <Button onPress={this.loginOut}  title="Go to gotoHome">
                 </Button>
             </View>
         )
