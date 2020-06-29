@@ -1,18 +1,24 @@
 import {
-     LOGIN,LOGOUT
+     LOGIN,LOGOUT,LOGIN_SUCCESS
 } from './actionsTypes';
-
  /**
   * 登陆
   * @param {} data 
   */
 const login = (data) => {
-    return (dispatch) => {
-        dispatch ({
-            type: LOGIN,
-            data: {data}
-        })
-}
+    console.log(data,'data')
+    //已登录
+    if (data.token) {
+        return {
+          type: LOGIN,
+          data
+        }
+    }else{
+        // return {
+        //     type: LOGIN,
+        //     data
+        // }
+    }
 };
  /**
   * 退出登陆
@@ -27,9 +33,17 @@ const logOut = (data) => {
 }
 };
 
-
+const detailUser = (data) => {
+    return (dispatch) => {
+        dispatch ({
+            type: LOGIN_SUCCESS,
+            data: data
+})
+}
+};
 export {
     login,
-    logOut
+    logOut,
+    detailUser
     
 }
