@@ -1,5 +1,3 @@
-# RN-text-init
-reactnative 路由-模板
 ## react-native-navigation
 ###### https://wix.github.io/react-native-navigation/docs/installing
 >  npm install --save react-native-navigation
