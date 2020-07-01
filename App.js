@@ -22,6 +22,7 @@ import { Provider } from 'react-redux'
 const Stack = createStackNavigator();
 import Home from "./app/src/home";
 import Login from "./app/src/login";
+import Repos from "./app/src/page/repos";
 function App() {
   return (
     <Provider store={store}>
@@ -29,6 +30,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Repos" component={Repos} />
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

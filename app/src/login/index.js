@@ -14,6 +14,9 @@ class Login extends Component {
          tfaToken:"",
         }
     }
+    componentWillMount(){
+      this.login()
+    }
     /**
      * 跳转首页
      */

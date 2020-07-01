@@ -59,6 +59,11 @@ export const getUserInfo = async(username) => {
     headers: GHGetHeader()
   })
 }
+export const reposCommits = async(username,reposName) => {
+  return await xFetch(GHPath(`https://api.github.com/repos/${username}/${reposName}/commits`), {
+    headers: GHGetHeader()
+  })
+}
 
 /**
  *
@@ -70,6 +75,7 @@ export const getRequest = (path, options) => {
     headers: GHGetHeader()
   }, options)
 }
+
 
 /**
  *
