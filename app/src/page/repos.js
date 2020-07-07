@@ -31,14 +31,16 @@ export class Repos extends Component {
             <View>
                 {/* <Text>{this.state.commint.length}</Text> */}
                 {this.state.commint.map(item=>{
-                    return (
+                    console.log(item.committer.login,'item-----')
+                    console.log(item.commit.committer.date,'item-----')
+                    return (    
                         <Card style={{flex: 0}}>
                         <CardItem>
                             <Left>
                            
                             <Thumbnail source={{uri: this.props.route.params.url}} />
                             <Body>
-                            <Text>{item.author.login}</Text>
+                            <Text>{item.committer.login}</Text>
                             <Text>{item.commit.committer.date}</Text>
                 </Body>
                             </Left>
